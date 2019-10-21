@@ -184,7 +184,6 @@ public class Tekstieditori extends JFrame {
 		});
 		
 		tuloste = new JTextField();
-		tuloste.setColumns(2);
 		toolBar.add(tuloste);
 		toolBar.add(haku);
 		
@@ -204,8 +203,7 @@ public class Tekstieditori extends JFrame {
 		//Tiedoston valintaikkuna
 		JFileChooser valintaikkuna = new JFileChooser();
 		valintaikkuna.setDialogTitle("Valitse tiedosto");
-		valintaikkuna.setApproveButtonText("Avaa tiedosto");
-		//valintaikkuna.setCancelButtonText("Peruuta");
+		//valintaikkuna.setApproveButtonText("Avaa tiedosto");
 		valintaikkuna.showOpenDialog(null);
 		String rivi ="";
 		String uusiTiedosto = valintaikkuna.getSelectedFile().getAbsolutePath();
@@ -232,7 +230,7 @@ public class Tekstieditori extends JFrame {
 		//Tallennusikkuna
 		JFileChooser valintaikkuna = new JFileChooser();
 		valintaikkuna.setDialogTitle("Tallenna nimellä");
-		valintaikkuna.setApproveButtonText("Tallenna");
+		//valintaikkuna.setApproveButtonText("Tallenna");
 		valintaikkuna.showSaveDialog(null);
 		
 		String uusiTiedosto = valintaikkuna.getSelectedFile().getAbsolutePath();
