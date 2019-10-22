@@ -43,15 +43,14 @@ public class Tekstieditori extends JFrame {
 	private JMenuItem mntmKorvaa;
 	private JMenuItem mntmTietojaOhjelmasta;
 	private JEditorPane editorPane;
-	private JButton button;
-	private JButton button_1;
+	private JButton avaus;
 	private JTextPane teksti;
-	
-	private File avattuTiedosto;
 	private JTextField syöte;
 	private JButton haku;
 	private JTextField tuloste;
 	private JButton korvaa;
+	private JLabel vaihto;
+	private JButton tallennus;
 
 
 	/**
@@ -152,25 +151,26 @@ public class Tekstieditori extends JFrame {
 		toolBar = new JToolBar();
 		contentPane.add(toolBar, BorderLayout.NORTH);
 		
-		button = new JButton();
+		avaus = new JButton();
 		Image open = new ImageIcon(this.getClass().getResource("open.png")).getImage();
-		button.setIcon(new ImageIcon(open));
-		button.addActionListener(new ActionListener() {
+		avaus.setIcon(new ImageIcon(open));
+		avaus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Avaa();
 			}
 		});
-		toolBar.add(button);
+		toolBar.add(avaus);
 		
-		button_1 = new JButton();
+		
+		tallennus = new JButton("");
 		Image save = new ImageIcon(this.getClass().getResource("save.png")).getImage();
-		button_1.setIcon(new ImageIcon(save));
-		button_1.addActionListener(new ActionListener() {
+		tallennus.setIcon(new ImageIcon(save));
+		tallennus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Tallenna();
 			}
 		});
-		toolBar.add(button_1);
+		toolBar.add(tallennus);
 		
 		syöte = new JTextField();
 		toolBar.add(syöte);
@@ -182,6 +182,11 @@ public class Tekstieditori extends JFrame {
 					Etsi();
 			}
 		});
+		
+		vaihto = new JLabel();
+		Image nuoli = new ImageIcon(this.getClass().getResource("arrow.png")).getImage();
+		vaihto.setIcon(new ImageIcon(nuoli));
+		toolBar.add(vaihto);
 		
 		tuloste = new JTextField();
 		toolBar.add(tuloste);
