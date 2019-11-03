@@ -30,6 +30,10 @@ import javax.swing.JTextField;
 
 public class Tekstieditori extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JMenuBar menuBar;
 	private JMenu mnTiedosto;
@@ -287,6 +291,7 @@ public class Tekstieditori extends JFrame {
 		
 		//Jostain syystä nappulaa käyttämällä ei vaihda väriä tekstikentästä ??
 		//MenuItemistä vaihtaa
+		editorPane.requestFocus();
 		editorPane.setSelectionColor(Color.RED);
 		editorPane.setSelectionStart(indeksi);
 		editorPane.setSelectionEnd(indeksi + haettava.length());
