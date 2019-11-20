@@ -286,21 +286,25 @@ public class Tekstieditori extends JFrame {
 		
 		//Käyttäjä saa itse syöttää hakusanan
 		String haettava = syöte.getText();
+		haettava = haettava.toLowerCase();
 		int indeksi = sisalto.indexOf(haettava);
+		
 		System.out.println("Indeksi: " + indeksi);
 		
-		//Jostain syystä nappulaa käyttämällä ei vaihda väriä tekstikentästä ??
-		//MenuItemistä vaihtaa
+		//Focus takaisin editorpaneen, jotta teksti korostetaan
+		//Jos sanaa ei löydy indeksi on -1 joten poistetaan se
+		if(indeksi > -1) {
 		editorPane.requestFocus();
 		editorPane.setSelectionColor(Color.RED);
 		editorPane.setSelectionStart(indeksi);
 		editorPane.setSelectionEnd(indeksi + haettava.length());
+		}
 	}
 	
 	private void Korvaa() {
 		String sisalto = editorPane.getText();
 		
-		//Luetaan minkä sanan käyttäjä haluaa muuttaa ja miksi
+		//Luetaan minkä sanan käyttäjä haluaa muuttaa ja mihin
 		String vanha = syöte.getText();
 		String uusi = tuloste.getText();
 		
